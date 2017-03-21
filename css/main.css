@@ -1,0 +1,80 @@
+
+				/* STEP 10: Move this CSS into an external file */
+				@charset "UTF-8";
+				/* Based on the exellent tutorial by Matthew James Taylor
+				http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support */
+
+				/* STEP 1: Normalize CSS */
+				@import url("normalize.css");
+
+				body{
+						background: #333;
+						padding: 0 5%;
+				}
+				div#container {
+						min-width: 720px;
+						max-width: 1024px;
+						margin: 0 auto;
+				}
+				header, footer {
+					color: white;
+				}
+				nav {
+						/*border: 3px solid lightblue;*/
+						/* STEP 5: Set NAV to float so that it also clears its floated children */
+						float: left;
+						/* STEP 6: Force nav to render the full width of the page */
+						width: 100%;
+						/* STEP 9: Conceal the part of the UL that protrudes outside of the NAV element */
+						overflow: hidden;
+				}
+				nav ul {
+						/*border: 3px solid deeppink;*/
+						/* STEP 3: remove list markers, margin, and padding from UL container */
+						list-style-type: none;
+						padding: 0;
+						margin: 0;
+						/* STEP 4: Set UL to float so that it clears its floated children */
+						float: left;
+						/* STEP 7: Move entire UL so that leftmost edge lines up with middle of page (50% of the width of the containing NAV element) */
+						position: relative;
+						left: 50%;
+						
+
+				}
+				nav li {
+						/*border: 3px solid lawngreen;*/
+						/* STEP 2: Arrange LI elements horizontally */
+						float: left;
+						/* STEP 8a: Move each LI back to the left 50% of the width of the containing UL element */
+						position: relative;
+						right: 50%;
+						/* STEP 8b: Separate each tab with a bit of space */
+						margin-right: 0.25em;
+				}
+				nav li a {
+						/*border: 3px solid orange;*/
+						/* Render anchor elements as boxes */
+						display: block;
+						padding: 0.5em;
+						background: #ccc;
+						/* Style the text for the links */
+						text-decoration: none;
+						color: #000;
+						
+				}
+				nav li a:hover {
+						background: #fff;
+				}
+				nav li a#selected {
+						background: #fff;
+				}
+				main, li {
+						background: #fff;
+				}
+				main {
+						padding: 1em;
+						/* Clear the NAV element above */
+						clear: both;
+						line-height: 1.5;
+				}

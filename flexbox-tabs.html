@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<title>Auto-Centered Tabs</title>
+
+		<style>
+				/* STEP 6: Remove diagnostic coloured borders and move CSS to external */
+				@charset "UTF-8";
+				/* Read the Web's best guide to CSS Flexbox at https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+				/* STEP 1: Normalize CSS */
+				@import url("css/normalize.css");
+				body{
+						background: #333;
+						padding: 0 5%;
+				}
+				div#container {
+						min-width: 250px;
+						max-width: 1024px;
+						margin: 0 auto;
+				}
+				header, footer {
+					color: white;
+				}
+				nav {
+						/*border: 3px solid lightblue;*/
+				}
+				nav ul {
+						/*border: 3px solid deeppink;*/
+						/* STEP 1: Get rid of the list markers */
+						list-style-type: none;
+						/* STEP 2: Set the UL to display: flex */
+						display: flex;
+						/* STEP 3: Remove margin and padding on UL */
+						margin: 0;
+						padding: 0;
+						/* STEP 4: Center content inside the UL */
+						justify-content: center;
+						/* STEP 5: Experiment with distributing the children of the UL differently (flex-start | flex-end | center | space-between | space-around) */
+						flex-wrap: nowrap;
+				}
+				nav li {
+						/*border: 3px solid lawngreen;*/
+						margin-right: 0.25em;
+						align-self: flex-end;
+				}
+				/*To be perfectly centered, the last menu item should not have a right margin like the rest do*/
+				nav li:last-child {
+					margin-right: 0;
+				}
+				nav li a {
+						/*border: 3px solid orange;*/
+						/* Render anchor elements as boxes */
+						display: block;
+						padding: 0.5em;
+						background: #ccc;
+						/* Style the text for the links */
+						text-decoration: none;
+						color: #000;
+				}
+				
+				nav li a:hover {
+						background: #fff;
+				}
+				nav li a#selected {
+						background: #fff;
+				}
+				main, li {
+						background: #fff;
+				}
+				main {
+						padding: 1em;
+						/* Clear the NAV element above */
+						clear: both;
+						line-height: 1.5;
+				}
+		</style>
+</head>
+<body>
+		<div id="container">
+				<header>
+						<h1>Auto-Centered Tabs</h1>
+						<nav>
+								<ul>
+										<li><a href="#">First Link</a></li>
+										<li><a href="#" id="selected">Second Link</a></li>
+										<li><a href="#">Third Link</a></li>
+										<li><a href="#">Fourth Link</a></li>
+										<li><a href="#">Fifth Link</a></li>
+								</ul>
+						</nav>
+				</header>
+				<main>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis laoreet lacus gravida varius. In eget leo vel ligula sodales ornare. Nunc id nunc augue, id consectetur urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi interdum pulvinar molestie. Aliquam nec metus ac nisi varius lacinia. Sed in tellus odio, eget porttitor massa. Duis ac eros urna, at tincidunt elit. Vivamus vel diam non nisi faucibus tristique. Nunc dapibus, tortor at elementum elementum, elit velit condimentum urna, a porttitor ligula ligula non augue. Nullam porta euismod venenatis. Vestibulum dapibus nisl in diam eleifend condimentum. Nam nec semper tellus. Nunc auctor, ante facilisis auctor facilisis, massa libero interdum velit, in posuere diam dui ac quam. Aenean sit amet mauris odio.</p>
+						<p>Integer dui nulla, tempor venenatis volutpat in, semper at risus. Fusce at dolor ipsum, a sollicitudin odio. Nunc pellentesque cursus ligula, at mollis massa rutrum at. Aliquam nisl elit, blandit non vehicula id, fringilla hendrerit tellus. Ut interdum, sem eu dictum dictum, dolor nisi ornare ligula, et laoreet lorem dui eget arcu. Integer sapien erat, sodales id vulputate vel, ornare et diam. Nunc aliquet nunc turpis. Donec volutpat mollis nunc ac tempor. Sed congue mauris quis dolor rutrum volutpat. Nulla vel felis felis, et ornare urna. Donec et sem non nibh ullamcorper fringilla. Praesent tellus sapien, pellentesque nec pretium a, ultricies sit amet leo.</p>
+						<p>Etiam sem nulla, vehicula id blandit a, vulputate quis orci. Ut lacus urna, venenatis et facilisis vel, placerat accumsan justo. Donec sed lorem eget elit egestas vehicula pharetra non diam. Vivamus euismod congue lacus non adipiscing. Ut ac risus ante, id tempor tortor. Aliquam erat volutpat. Curabitur euismod scelerisque dignissim. Proin vel velit non elit gravida tempor vitae non leo.</p>
+						<p>Praesent placerat est urna. Duis porttitor nisi vel quam malesuada euismod. Quisque gravida ornare consequat. Suspendisse mollis suscipit enim, eu malesuada elit consequat eget. Proin facilisis consectetur felis sit amet mattis. Quisque leo dui, placerat eu fermentum in, sagittis ac quam. Cras a risus ante, ut convallis velit. Donec vel arcu sem, eget feugiat erat. Curabitur augue nisl, consectetur et posuere vitae, molestie nec quam. Duis placerat, quam aliquam ornare tincidunt, tortor dui consectetur purus, quis tincidunt justo leo eget eros. Praesent id ante ipsum, id hendrerit turpis. Mauris lorem nisl, malesuada mollis varius quis, commodo vel mauris.</p>
+						<p>Sed quis lectus ante, non lacinia elit. Sed odio leo, lacinia at ornare sit amet, faucibus non purus. Etiam eu nibh id velit placerat faucibus nec et metus. Etiam malesuada mattis velit, eu pretium eros auctor quis. Fusce enim erat, varius non imperdiet sit amet, semper non sem. Morbi metus dolor, euismod eu consectetur nec, bibendum adipiscing tellus. In id tortor et leo commodo interdum. Donec neque nisl, condimentum elementum venenatis sed, porttitor at felis. Nulla lectus nibh, rhoncus non consequat et, sagittis ut nisi.</p>
+				</main>
+				<footer>
+						<p><small>© Totally Tabular Inc.</small></p>
+				</footer><!-- #container -->
+		</div>
+</body>
+</html>
